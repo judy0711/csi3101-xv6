@@ -32,7 +32,17 @@ struct context {
   uint eip;
 };
 
+
+
+
 enum procstate { UNUSED, EMBRYO, SLEEPING, RUNNABLE, RUNNING, ZOMBIE };
+
+// UNUSED: The process is not in use.
+// EMBRYO: The process is newly allocated (not ready for running yet)
+// SLEEPING: The process is sleeping (waiting for IO or a child process to finish)
+// RUNNABLE: The process is ready to run
+// RUNNING: The process is currently running on CPU
+// ZOMBIE : Complete execution but still has entry in process table 
 
 // Per-process state
 struct proc {
